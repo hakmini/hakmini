@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>메모장</title>
+    <link rel="stylesheet" type="text/css" href="1.css" />
+  </head>
+  <body>
+    <h2>메모장</h2>
+    <div class="tools">
+      <!--전체 기능-->
+      <h3>기능들</h3>
+      <select class="font" onchange="changeFont(this)">
+        <!--폰트 설정-->
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="궁서체">궁서체</option>
+        <option value="맑은 고딕">맑은 고딕</option>
+        <option value="굴림체">굴림체</option>
+      </select>
+      <select class="size" onchange="changeSize(this)">
+        <!--폰트 크기 설정-->
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+      </select>
+      <!--볼드체와 기울임 효과 설정 버튼-->
+      <input type="button" value="볼드체" class="effect" onclick="Bold()" />
+      <input type="button" value="기울임" class="effect" onclick="Italic()" />
+
+      <!--전체 삭제와 효과 제거 버튼-->
+      <input type="reset" value="Clear" onclick="remove()" />
+      <input type="button" value="효과 제거" class="normal" onclick="reset()" />
+      <br />
+
+      <!--메모장 필드-->
+      <textarea placeholder="Memo" id="content" rows="20" cols="100"></textarea>
+      <br /><br />
+      <!--파일 이름 설정-->
+      <input placeholder="파일 이름(확장자까지)" id="filename" />
+      <!--파일 저장 버튼-->
+      <button id="download">파일 저장</button>
+    </div>
+
+    <script type="text/javascript">
+      function changeFont(font) {
+        //font의 밸류 값을 fontFamily에 저장
+        document.getElementById("content").style.fontFamily = font.value;
+      }
+      function changeSize(n) {
+        var s = document.getElementById("content");
+        //size옵션들의 밸류 값을 px단위로 저장
+        s.style.fontSize = n.value + "px";
+      }
+      function Bold() {
+        //버튼을 눌렀을 때 노말인 상태라면 볼드체로, 반대일 때는 노말인 상태로 바꾸는 함수
+        var bol = document.getElementById("content").style.fontWeight;
+        if (bol == "normal") {
+          document.getElementById("content").style.fontWeight = "bold";
+        } else {
+          document.getElementById("content").style.fontWeight = "normal";
+        }
+      }
+      function Italic() {
+        //버튼을 눌렀을 때 노말인 상태라면 기울임 효과를 주고, 반대일 때는 노말인 상태로 바꾸는 함수
+        var bol = document.getElementById("content").style.fontStyle;
+        if (bol == "normal") {
+          document.getElementById("content").style.fontStyle = "Italic";
+        } else {
+          document.getElementById("content").style.fontStyle = "normal";
+        }
+      }
+      function reset() {
+        //fontStyle, textDecoration, fontWeight를 모두 초기화하는 함수
+        document.getElementById("content").style.fontStyle = "normal";
+        document.getElementById("content").style.textDecoration = "none";
+        document.getElementById("content").style.fontWeight = "normal";
+      }
+      function remove() {
+        //메모장의 내용, 글꼴, 글자 크기를 초기상태로 되돌리는 함수
+        document.getElementById("content").value = "";
+        document.getElementById("content").style.fontFamily = "none";
+        document.getElementById("content").style.fontSize = "10px";
+      }
+      function downloadFile(filename, content) {
+        const element = document.createElement("a"); //element라는 <a>태그의 DOM객체 생성
+        const blob = new Blob([content], {
+          type: "plain/text",
+        });
+        const fileUrl = URL.createObjectURL(blob);
+        element.setAttribute("href", fileUrl); //href 속성 추가
+        element.setAttribute("download", filename); //download 속성 추가
+        element.style.display = "none";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
+      window.onload = () => {
+        //웹브라우저 내의 모든 요소가 준비되었을 때 실행
+        document.getElementById("download").addEventListener("click", (e) => {
+          //파일 저장 버튼이 클릭되었을 때
+          const filename = document.getElementById("filename").value;
+          const content = document.getElementById("content").value;
+          if (filename && content) {
+            //두 값이 모드 들어 왔을 때 downloadFile 함수를 호출
+            downloadFile(filename, content);
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

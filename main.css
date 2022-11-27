@@ -1,0 +1,19 @@
+.A_div {
+  width: 100x;
+  height: 1000px;
+  border: solid;
+}
+
+.A_bg {
+  background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA2MjRfMjU3%2FMDAxNTkyOTk4ODQ0MzUy.4l16umEwnztfDkyqUfWJaFT_3iqusCAlYwn6tjJv1Ccg.frvJ8GC16W8XyVqq7ZVPgo-OR1j89bsbfrYM0ydwB5Ag.JPEG.sdon1222%2FIMG_3900.JPG&type=a340");
+  background-size: 100% 100%;
+}
+
+iframe {
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+}

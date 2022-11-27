@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "montserrat", sans-serif;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  margin-left: 46%;
+}
+.tools {
+  margin-left: 10px;
+}
+.font {
+  margin: 10px 0;
+  padding: 8px;
+  width: 15%;
+  font-family: "montserrat", sans-serif;
+  margin-left: 28%;
+}
+.size {
+  margin: 10px 0;
+  padding: 8px;
+  width: 7%;
+  font-family: "montserrat", sans-serif;
+}
+.effect {
+  margin: 10px 0;
+  padding: 8px;
+  width: 10%;
+  background-color: skyblue;
+  margin-left: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: "montserrat", sans-serif;
+}
+.effect:hover {
+  background-color: orange;
+  transition: 0.5s;
+  color: white;
+}
+textarea {
+  width: 800px;
+  height: 350x;
+  margin-left: 0%;
+  font-size: 10px;
+  font-family: "montserrat", sans-serif;
+}
+input[type="reset"] {
+  margin: 15px 0;
+  padding: 10px;
+  width: 15%;
+  background-color: skyblue;
+  margin-left: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: "montserrat", sans-serif;
+  margin-left: 34%;
+}
+input[type="reset"]:hover {
+  background-color: orange;
+  transition: 0.5s;
+  color: white;
+}
+.normal {
+  margin: 10px 0;
+  padding: 10px;
+  width: 15%;
+  background-color: skyblue;
+  margin-left: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: "montserrat", sans-serif;
+}
+.normal:hover {
+  background-color: orange;
+  transition: 0.5s;
+  color: white;
+}
+#filename {
+  border: 2px solid skyblue;
+  border-radius: 2px;
+  color: #052a53;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  margin-left: 33%;
+  font-family: "montserrat", sans-serif;
+}
+#download {
+  margin: 10px 0;
+  padding: 10px;
+  width: 15%;
+  background-color: skyblue;
+  margin-left: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: "montserrat", sans-serif;
+}
+#download:hover {
+  background-color: orange;
+  transition: 0.5s;
+  color: white;
+}
